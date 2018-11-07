@@ -4,7 +4,7 @@ import socket
 import time
 
 
-ADDR = 'fe80::70c5:80c2:a1a0:37a7' # the other RPi
+ADDR = 'fd28:e5e1:86:0:e40c:932d:df85:4be9' # the other RPi
 PORT = 2016
 
 def main():
@@ -12,8 +12,8 @@ def main():
     while True:
         s6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
         s6.connect((ADDR, PORT, 0, 0))
-        data = s6.recv(1024)clea
-        print(data.decode('utf-8'))
+        data = s6.recv(1024)
+        print(data.decode('utf-8'), end='')
 
         # get it again after 10 seconds
         time.sleep(10)
