@@ -13,7 +13,7 @@ def main():
         s6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
         s6.connect((ADDR, PORT, 0, 0))
         data = s6.recv(1024)
-        print(data.decode('utf-8'), end='')
+        print(data.decode('utf-8'))
 
         # get it again after 10 seconds
         time.sleep(10)
