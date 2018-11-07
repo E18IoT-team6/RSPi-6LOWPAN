@@ -4,7 +4,7 @@ import socket
 import time
 
 
-ADDR = 'fd28:e5e1:86:0:e40c:932d:df85:4be9' # the other RPi
+ADDR = '2001:db8::1' # the other RPi
 PORT = 2016
 
 def main():
@@ -18,5 +18,7 @@ def main():
         # get it again after 10 seconds
         time.sleep(10)
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
+
+main()
