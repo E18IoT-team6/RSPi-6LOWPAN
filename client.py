@@ -11,10 +11,9 @@ def main():
     # scope_id = socket.if_nametoindex('lowpan0')
     while True:
         s6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
-        print(s6)
-        # s6.connect((ADDR, PORT, 0, 0))
-        # data = s6.recv(1024)
-        # print(data.decode('utf-8'), end='')
+        s6.connect((ADDR, PORT, 0, 0))
+        data = s6.recv(1024)
+        print(data.decode('utf-8'), end='')
 
         # get it again after 10 seconds
         time.sleep(10)
