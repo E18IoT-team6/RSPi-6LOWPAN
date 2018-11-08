@@ -1,5 +1,13 @@
 # How to do
 
+### D-link Address
+
+__RSP-sink__
+192.168.0.138
+
+__RSP-client__
+192.168.0.198
+
 
 ## wpan-tools
 
@@ -70,4 +78,17 @@ sudo ip link set lowpan0 up
 # Check current networks
 ifconfig
 
+```
+
+
+## Just copy it
+```bash
+sudo ip link set lowpan0 down   
+sudo ip link set wpan0 down
+sudo iwpan dev wpan0 set pan_id 0xabcd
+sudo ip link add link wpan0 name lowpan0 type lowpan
+sudo ip link set wpan0 up
+sudo ip link set lowpan0 up
+clear
+ifconfig
 ```
