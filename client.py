@@ -3,7 +3,7 @@
 import socket
 import time
 
-ADDR = 'fe80::1c14:88ac:2e4b:7fe1' # Server RPi
+ADDR = '2001:db8::1' # Server RPi
 PORT = 1500
 
 def main():
