@@ -12,25 +12,23 @@ def main():
     # specify the IPv6 "scope id"
     # scope_id = socket.if_nametoindex('lowpan0')
 
+    print("Waiting for packets")
+
     cap = pyshark.LiveCapture(interface='lowpan0')
-
-    print("Tamano cap:", len(cap))
-
-    cap.sniff(packet_count=5)
-
-    print("Tamano cap:", len(cap))
-
-
-    for pkt in cap:
-        print('Frame Info', pkt.frame_info)
-        print('\n')
-        print('Length', pkt.length)
-        print('Captured Length', pkt.captured_length)
-        print('sniff_time', pkt.sniff_time)
-        print('\n')
-
        
-    # while True:
+    while True:
+        cap.sniff(packet_count=5)
+
+        print("Tamano cap:", len(cap))
+
+        for pkt in cap:
+            print('NO:', pkt.number)
+            print('Frame Info', pkt.frame_info)
+            print('\n')
+            # print('Length', pkt.length)
+            # print('Captured Length', pkt.captured_length)
+            # print('sniff_time', pkt.sniff_time)
+            # print('\n')
     #     cap.sniff(packet_count=5)
     #     print("Tamano cap:", len(cap))
     # Create the socket with a INET6 network
