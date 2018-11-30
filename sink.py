@@ -20,7 +20,12 @@ def main():
 
     print("Tamano cap:", len(cap))
 
+    for pkt in cap:
+        print cap
+
     while True:
+        cap.sniff(packet_count=5)
+        print("Tamano cap:", len(cap))
         # Create the socket with a INET6 network
         # s6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
         # Bind the socket to address
@@ -32,7 +37,6 @@ def main():
         # print(data.decode('utf-8'), end='')
 
         # get it again after 5 seconds
-        time.sleep(5)
 
 
 if __name__ == '__main__':
