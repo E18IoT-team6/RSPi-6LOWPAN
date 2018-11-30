@@ -21,11 +21,23 @@ def main():
     print("Tamano cap:", len(cap))
 
     for pkt in cap:
-        print (pkt.length )
+        print('delta', pkt.delta)
+        print('destination', pkt.destination)
+        print('info', pkt.info)
+        print('ip id', pkt.ip_id)
+        print('length', pkt.length)
+        print('no', pkt.no)
+        print('protocol', pkt.protocol)
+        print('source', pkt.source)
+        print('stream', pkt.stream)
+        print('summary_line', pkt.summary_line)
+        print('time', pkt.time)
+        print('window', pkt.window)
 
-    while True:
-        cap.sniff(packet_count=5)
-        print("Tamano cap:", len(cap))
+
+    # while True:
+    #     cap.sniff(packet_count=5)
+    #     print("Tamano cap:", len(cap))
         # Create the socket with a INET6 network
         # s6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
         # Bind the socket to address
