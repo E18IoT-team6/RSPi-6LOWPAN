@@ -12,10 +12,11 @@ def main():
     scope_id = socket.if_nametoindex('lowpan0')
 
     cap = pyshark.LiveCapture(interface='lowpan0')
+    
+    print("Tamano cap:", len(cap))
 
     cap.sniff(packet_count=5)
 
-    print("Tamano cap:", len(cap))
 
     while True:
         # Create the socket with a INET6 network
