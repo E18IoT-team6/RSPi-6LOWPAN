@@ -2,9 +2,11 @@
 
 import socket
 from subprocess import PIPE, Popen
+import pyshark
 
 HOST = ''    # Symbolic name meaning all available interfaces
 PORT = 1500  # Arbitrary port
+
 
 def get_cpu_temperature():
     """Function to get the temperature of the CPU"""
@@ -23,6 +25,12 @@ def main():
     # Enable the server to accept connections.
     s6.listen(1)
 
+    cap = pyshark.LiveCapture(interface='lowpan0')
+
+    cap.sniff(packet_count=5)
+
+    print("Tamano cap:", len(cap))
+
     while True:
         # Accept a connection.
         # Return (conn, address)
@@ -32,7 +40,9 @@ def main():
         # Send data to the socket
         conn.send(get_cpu_temperature())
         # Mark the socket closed
+        print("Tamano cap:", len(cap))
         conn.close()
+
 
 
 if __name__ == '__main__':

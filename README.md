@@ -86,7 +86,7 @@ sudo ip link set wpan0 down
 sudo iwpan dev wpan0 set pan_id 0xabcd
 sudo ip link add link wpan0 name lowpan0 type lowpan
 sudo ip addr add 2001:db8::1/64 dev lowpan0
-# sudo ip addr add 2001:db8::2/64 dev lowpan0
+#sudo ip addr add 2001:db8::2/64 dev lowpan0
 sudo ip link set wpan0 up
 sudo ip link set lowpan0 up
 clear

@@ -3,7 +3,7 @@
 import socket
 import time
 
-ADDR = '2001:db8::1' # Server RPi
+ADDR = '2001:db8::2' # Sensor RPi
 PORT = 1500
 
 def main():
