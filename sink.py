@@ -21,7 +21,7 @@ def main():
     print("Tamano cap:", len(cap))
 
     for pkt in cap:
-        print (pkt)
+        print (pkt.length )
 
     while True:
         cap.sniff(packet_count=5)
