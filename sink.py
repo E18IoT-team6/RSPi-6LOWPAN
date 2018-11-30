@@ -20,35 +20,30 @@ def main():
 
     print("Tamano cap:", len(cap))
 
+
     for pkt in cap:
-        print('delta', pkt.delta)
-        print('destination', pkt.destination)
-        print('info', pkt.info)
-        print('ip id', pkt.ip_id)
-        print('length', pkt.length)
-        print('no', pkt.no)
-        print('protocol', pkt.protocol)
-        print('source', pkt.source)
-        print('stream', pkt.stream)
-        print('summary_line', pkt.summary_line)
-        print('time', pkt.time)
-        print('window', pkt.window)
+        print('Frame Info', pkt.frame_info)
+        print('\n')
+        print('Length', pkt.length)
+        print('Captured Length', pkt.captured_length)
+        print('sniff_time', pkt.sniff_time)
+        print('\n')
 
-
+       
     # while True:
     #     cap.sniff(packet_count=5)
     #     print("Tamano cap:", len(cap))
-        # Create the socket with a INET6 network
-        # s6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
-        # Bind the socket to address
-        # s6.connect((ADDR, PORT, 0, scope_id))
-        # Receive data from the socket. The return value is a bytes object representing the data received.
-        # data = s6.recv(1024)
+    # Create the socket with a INET6 network
+    # s6 = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0)
+    # Bind the socket to address
+    # s6.connect((ADDR, PORT, 0, scope_id))
+    # Receive data from the socket. The return value is a bytes object representing the data received.
+    # data = s6.recv(1024)
 
-        # Print the data
-        # print(data.decode('utf-8'), end='')
+    # Print the data
+    # print(data.decode('utf-8'), end='')
 
-        # get it again after 5 seconds
+    # get it again after 5 seconds
 
 
 if __name__ == '__main__':
