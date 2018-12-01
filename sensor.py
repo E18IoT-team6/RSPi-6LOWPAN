@@ -33,6 +33,7 @@ def main():
         # conn is a new socket object usable to send and receive data on the connection,
         # address is the address bound to the socket on the other end of the connection.
         conn, addr = s6.accept()
+        print("Accepting data requests...")
         # Send data to the socket
         conn.send(get_cpu_temperature())
         # Mark the socket closed

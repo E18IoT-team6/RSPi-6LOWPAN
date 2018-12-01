@@ -15,20 +15,29 @@ def main():
     print("Waiting for packets")
 
     cap = pyshark.LiveCapture(interface='lowpan0')
-       
+
     while True:
         cap.sniff(packet_count=5)
 
-        print("Tamano cap:", len(cap))
+        print("Size cap:", len(cap))
 
-        for pkt in cap:
-            print('NO:', pkt.number)
-            print('Frame Info', pkt.frame_info)
-            print('\n')
+        cap.apply_on_packets(print_sources_data)
+
+        # for pkt in cap:
+        #     print('NO:', pkt.number)
+        #     print('Frame Info', pkt.frame_info)
+        #     print('\n')
             # print('Length', pkt.length)
             # print('Captured Length', pkt.captured_length)
             # print('sniff_time', pkt.sniff_time)
             # print('\n')
+
+
+def print_sources_data(pkt):
+    src_addr = pkt.ip.src
+    dst_addr = pkt.ip.dst
+    print('%s --> %s' % (src_addr, dst_addr))
+
     #     cap.sniff(packet_count=5)
     #     print("Tamano cap:", len(cap))
     # Create the socket with a INET6 network
