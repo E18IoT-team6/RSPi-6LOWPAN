@@ -21,6 +21,7 @@ def main():
     pac_1 = cap[0]
 
     print(pac_1.layers)
+    print(pac_1.getitem[1])
 
     # while True:
 
