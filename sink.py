@@ -21,7 +21,7 @@ def main():
 
         print("Size cap:", len(cap))
 
-        cap.apply_on_packets(print_sources_data)
+        cap.apply_on_packets(print_sources_data, timeout=100)
 
         # for pkt in cap:
         #     print('NO:', pkt.number)
