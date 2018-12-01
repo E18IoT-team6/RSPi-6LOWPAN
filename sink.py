@@ -20,7 +20,7 @@ def main():
 
     pac_1 = cap[0]
 
-    print(pac_1.ip)
+    print(pac_1.layers)
 
     # while True:
 
