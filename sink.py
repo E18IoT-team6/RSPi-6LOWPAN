@@ -24,7 +24,7 @@ def main():
         # cap.apply_on_packets(print_sources_data, timeout=100t)
 
         for pkt in cap:
-            print('IP:', pkt.ip)
+            print('IP:', pkt)
             # print('NO:', pkt.number)
         #     print('Frame Info', pkt.frame_info)
         #     print('\n')
