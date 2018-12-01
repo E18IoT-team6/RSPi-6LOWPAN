@@ -15,16 +15,20 @@ def main():
     print("Waiting for packets")
 
     cap = pyshark.LiveCapture(interface='lowpan0')
+        
+    cap.sniff(packet_count=5)
 
-    while True:
-        cap.sniff(packet_count=5)
+    pac_1 = cap[0]
 
-        print("Size cap:", len(cap))
+    print(pac_1)
+
+    # while True:
+
+    #     print("Size cap:", len(cap))
 
         # cap.apply_on_packets(print_sources_data, timeout=100t)
 
-        for pkt in cap:
-            print('IP:', pkt)
+        # for pkt in cap:
             # print('NO:', pkt.number)
         #     print('Frame Info', pkt.frame_info)
         #     print('\n')
