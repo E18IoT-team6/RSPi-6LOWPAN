@@ -21,10 +21,11 @@ def main():
 
         print("Size cap:", len(cap))
 
-        cap.apply_on_packets(print_sources_data, timeout=100)
+        # cap.apply_on_packets(print_sources_data, timeout=100t)
 
-        # for pkt in cap:
-        #     print('NO:', pkt.number)
+        for pkt in cap:
+            print('IP:', pkt.ip)
+            # print('NO:', pkt.number)
         #     print('Frame Info', pkt.frame_info)
         #     print('\n')
             # print('Length', pkt.length)
